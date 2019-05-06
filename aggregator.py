@@ -144,6 +144,10 @@ if __name__ == '__main__':
         if not os.path.exists(subpath):
             raise argparse.ArgumentTypeError("Parameter {} is not a valid path".format(subpath))
 
+
+    if not len(args.subpaths):
+        args.subpaths = ['']
+
     if args.output not in ['summary', 'csv']:
         raise argparse.ArgumentTypeError("Parameter {} is not summary or csv".format(args.output))
 
